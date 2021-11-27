@@ -30,6 +30,12 @@ public class WordFrequencyAnalyzerImpl implements WordFrequencyAnalyzer {
     private static final String STARTING_METHOD_REFERENCE = "Starting method {}";
     private static final String ENDING_METHOD_REFERENCE = "Ending method {}";
 
+    /**
+     * Method to retrieve the frequency of the most occurring word in a given sentence
+     *
+     * @param text required text in which we need to find the frequency of the most occurring word
+     * @return the integer value of the most occurring word in the given sentence
+     */
     @Override
     public int calculateHighestFrequency(String text) {
         var methodName = "calculateHighestFrequency";
@@ -51,6 +57,13 @@ public class WordFrequencyAnalyzerImpl implements WordFrequencyAnalyzer {
         return max.getValue().intValue();
     }
 
+    /**
+     * Method to retrieve the frequency of the given word in a given sentence
+     *
+     * @param text required text in which we need to find the frequency of the given word
+     * @param word required word for which we need to find the frequency in the given text
+     * @return the integer value of the frequency of the given word in the given sentence
+     */
     @Override
     public int calculateFrequencyForWord(String text, String word) {
         var methodName = "calculateFrequencyForWord";
@@ -71,6 +84,13 @@ public class WordFrequencyAnalyzerImpl implements WordFrequencyAnalyzer {
         return (int) frequency;
     }
 
+    /**
+     * Method to retrieve the most frequent N words in a given sentence
+     *
+     * @param text required text in which we need to find the frequency of the given word
+     * @param n    required number of words for which the frequent words should be found in the text
+     * @return @return {@link List<WordFrequency>} the list of the most frequent N words
+     */
     @Override
     public List<WordFrequency> calculateMostFrequentNWords(String text, int n) {
         var methodName = "calculateMostFrequentNWords";

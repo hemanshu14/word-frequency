@@ -1,15 +1,26 @@
 package com.ordina.assignment.wordfrequencyanalyzer;
 
-import org.junit.jupiter.api.Disabled;
+import com.ordina.assignment.wordfrequencyanalyzer.controller.WordFrequencyAnalyzerController;
+import com.ordina.assignment.wordfrequencyanalyzer.service.WordFrequencyAnalyzer;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-@Disabled
 class WordfrequencyanalyzerApplicationTests {
 
-   /* @Test
+    @Autowired
+    private WordFrequencyAnalyzerController wordFrequencyAnalyzerController;
+
+    @Autowired
+    private WordFrequencyAnalyzer wordFrequencyAnalyzer;
+
+    @Test
     void contextLoads() {
-    }*/
+        Assertions.assertNotNull(wordFrequencyAnalyzerController);
+        Assertions.assertNotNull(wordFrequencyAnalyzer);
+    }
+
 
 }
