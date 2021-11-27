@@ -101,6 +101,11 @@ public class WordFrequencyAnalyzerImpl implements WordFrequencyAnalyzer {
         }
 
         var listOfWords = getListOfWords(text);
+
+        if (listOfWords.isEmpty()) {
+            throw new DataNotFoundException("There are no alphabetical words present in the given sentence");
+        }
+
         var wordFrequencyList = new ArrayList<WordFrequencyImpl>();
 
         var result = listOfWords.stream().collect(
